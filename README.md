@@ -1,6 +1,6 @@
 # AgroSync 🌱
 
-![AgroSync Banner](![image](https://github.com/user-attachments/assets/7b5899f6-3d92-4ad5-8729-88a3552675a4)
+(![image](https://github.com/user-attachments/assets/7b5899f6-3d92-4ad5-8729-88a3552675a4)
 )
 
 **Sistema de Gestión Agrícola**  
