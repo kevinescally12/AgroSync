@@ -1,7 +1,7 @@
-# AgroSync
 # AgroSync 🌱
 
-![AgroSync Banner](https://www.rtve.es/television/20240402/por-plantas-siempre-crecen-hacia-arriba/16040830.shtml)
+![AgroSync Banner](![image](https://github.com/user-attachments/assets/7b5899f6-3d92-4ad5-8729-88a3552675a4)
+)
 
 **Sistema de Gestión Agrícola**  
 Plataforma web ágil para apoyar a los agricultores y a los ingenieros de DEVIDA en la planificación, control y análisis de sus actividades agrícolas. AgroSync permite:
@@ -14,7 +14,7 @@ Plataforma web ágil para apoyar a los agricultores y a los ingenieros de DEVIDA
 
 ---
 
-## 📋 Contenidos de este README
+## 📋 Contenido
 
 1. [Visión y Alcance](#visión-y-alcance)  
 2. [Estructura del Repositorio](#estructura-del-repositorio)  
