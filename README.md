@@ -1,7 +1,7 @@
 # AgroSync 🌱
 
-(![image](https://github.com/user-attachments/assets/7b5899f6-3d92-4ad5-8729-88a3552675a4)
-)
+![image](https://github.com/user-attachments/assets/7b5899f6-3d92-4ad5-8729-88a3552675a4)
+
 
 **Sistema de Gestión Agrícola**  
 Plataforma web ágil para apoyar a los agricultores y a los ingenieros de DEVIDA en la planificación, control y análisis de sus actividades agrícolas. AgroSync permite:
