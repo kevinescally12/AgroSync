@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url('https://shop.goodhillfarms.com/cdn/shop/files/fresh-cacao-pods-chocolate-good-hill-farms-1133494408.jpg?v=1740191918&width=1920');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+body{
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    flex: 1;
+    padding: 0;
+    
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(2px);
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    width: 350px;
+    height: 400px;
+}
+
+.card h2 {
+    text-align: center;
+    color: #2e7d32; /* verde vegetal */
+}
+
+.card a {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #388e3c;
+    text-decoration: none;
+}
+form{
+    text-align: center;
+    align-items: center;
+
+}
+
+.card button {
+    width: 100%;
+    padding: 10px;
+    background-color: #66bb6a;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.card button:hover {
+    background-color: #4caf50;
+}
+
+
+.registro{
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.registro .helptext {
+    font-size: 0;
+}
+
+.registro ul{
+    font-size: 0;
+}
+
+footer{
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.somos {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+    max-width: 100%;
+    text-align: center;
+    flex-basis: 100%;
+    width: 100vw; /* 100% del viewport */
+    margin: 0 auto;
+}
