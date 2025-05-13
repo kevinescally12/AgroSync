@@ -8,7 +8,7 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: 'Segoe UI', sans-serif;
-    background-image: url('https://shop.goodhillfarms.com/cdn/shop/files/fresh-cacao-pods-chocolate-good-hill-farms-1133494408.jpg?v=1740191918&width=1920');
+    /*background-image: url('https://shop.goodhillfarms.com/cdn/shop/files/fresh-cacao-pods-chocolate-good-hill-farms-1133494408.jpg?v=1740191918&width=1920');*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -112,4 +112,8 @@ footer{
     flex-basis: 100%;
     width: 100vw; /* 100% del viewport */
     margin: 0 auto;
+}
+
+.agricultor-contacto{
+    background-color: white;
 }

@@ -1,0 +1,188 @@
+:root {
+    --color-primary: #2ea3f2;
+    --color-text:#666;
+    --font-main: 'Amoria';
+
+}
+
+
+* {
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin : 0;
+    padding: 0;
+}
+
+@font-face{
+    font-family : 'Amoria';
+    src : url('../fonts/Quitle Italic.ttf')
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family : var(--font-main);
+    color : var(--color-primary);
+
+}
+
+
+a{
+    
+    margin: 10px;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 80px;
+    background-color: blue;
+}
+
+nav ul{
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 90vw;
+
+}
+nav ul li a{
+    text-decoration: none;
+    color : white;
+    text-transform: uppercase;
+    font-family: var(--font-main) ;
+    padding: 20px;
+}
+nav ul li a:hover{
+    color: var(--color-text);
+
+}
+main {
+    display: flex;
+    width: 100vw;
+    margin: 50px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-text);
+    
+    width: 70vw;
+    list-style-type: none;
+    
+}
+.list li{
+    padding: 15px;
+    width: 100%;
+    border-bottom: 1px solid var(--color-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn{
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    color: grey;
+    
+}
+.btn:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.btn-detail {
+    background-color: var(--color-primary);
+    color: white;
+
+}
+.btn-edit{
+    background-color: #4e4007;
+    color: white;
+}
+.btn-delete{
+    background-color: red;
+    color: white;
+
+}
+.search{
+    margin : 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.search .search_input{
+    padding: 10px;
+    border: 1px solid var(--color-text);
+    border-radius: 5px;
+    width: 50vw;
+    margin-right: 10px;
+}
+.btn_input{
+    padding: 10px 20px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.aux-btn{
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    margin: 5px
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 80px;
+    background-color: var(--color-primary);
+    color: white;
+    font-family: var(--font-main);
+}
+.alert-success{
+    width: 50%;
+    padding: 15px;
+    background-color: rgb(1, 47, 32);
+    color: white;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-around;
+    ;
+}
+.card{
+    width: 500px;
+    height: 300px;
+    border: 1px solid var(--color-text);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgb(88, 190, 221);
+    margin: 20px;
+}
+
+
+.card a {
+    color: white;
+    text-decoration: none;
+}

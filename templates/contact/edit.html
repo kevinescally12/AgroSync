@@ -1,0 +1,31 @@
+{% extends 'layout/base.html'%}
+
+
+{% block title %} Editar Contacto{% endblock %}
+{% block styles %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/forms.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>Editar Contacto</h1>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="alert-success" {% endif %}>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+        {{ message }}
+        </li>
+        {% endfor %}
+</ul>
+{% endif %}
+
+<span class='aux-btn'> <a href='{% url "contact" %}'>Volver atras</a></span>
+<form action='{% url "contact_edit" id=id %}' method='POST'>
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <input type='submit' value='Enviar' class='btn_send'>
+</form>
+{% endblock %}
