@@ -1,0 +1,20 @@
+<!-- accounts/templates/accounts/login.html -->
+{% extends 'layout/base.html' %}
+{% block title %}Iniciar sesión{% endblock %}
+{% block content %}
+
+
+<div class="contenedor">
+    <div class="card ">
+        <h2 class="ino">Iniciar Sesión</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <a href="{% url 'register'%}">¿No tienes cuenta?</a>
+            <button type="submit">Login</button>
+            
+        </form>
+    </div>
+</div>
+
+{% endblock %}
