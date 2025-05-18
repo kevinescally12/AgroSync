@@ -41,6 +41,6 @@ def logout_view(request):
     logout(request)
     return redirect('login')
 
-@login_required
+
 def home_view(request):
     return render(request, 'home.html')
