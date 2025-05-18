@@ -8,10 +8,16 @@ class RegisterForm(UserCreationForm):
     email = forms.EmailField(label='', widget=forms.EmailInput(attrs={'placeholder': 'Correo electrónico'}))
     password1 = forms.CharField(label='', widget=forms.PasswordInput(attrs={'placeholder': 'Contraseña'}))
     password2 = forms.CharField(label='', widget=forms.PasswordInput(attrs={'placeholder': 'Repetir contraseña'}))
+    
+    rol = forms.ChoiceField(
+        choices=CustomUser.ROLES,
+        label='',
+        widget=forms.Select(attrs={'class': 'form-select'})
+    )
 
     class Meta:
         model = CustomUser
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'email', 'rol', 'password1', 'password2']
 
 
 class LoginForm(AuthenticationForm):
@@ -22,5 +28,5 @@ class LoginForm(AuthenticationForm):
         required=False,
         initial=False,
         widget=forms.CheckboxInput(attrs={'class': 'form-check-input'}),
-        label='Recordarme'  # Eliminar label aquí también
+        label='Recordarme'
     )

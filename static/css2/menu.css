@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Kalnia+Glaze:wght@100..700&family=Parisienne&display=swap');
+#navegador {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+}
+
+.navbar-nav .nav-link {
+  color: #333;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #28a745;
+}
+
+.navbar .btn {
+  border-radius: 20px;
+  padding: 5px 15px;
+}

@@ -1,17 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navegador">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home' %}">Agrosync</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto">
-                {% if request.user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a></li>
-                <li class="agricultor"><a class="nav-link" href="{% url 'contact' %}">Agricultor</a> </li>
-                {% else %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Registrarse</a></li>
-                
-                {% endif %}
-            </ul>
-        </div>
+
+{%load static %}
+{%block static %} <link rel="stylesheet" href="{% static 'css2/menu.css' %}">{% endblock %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm" id="navegador">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-success" href="{% url 'home' %}">Agrosync</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto align-items-center">
+        {% if request.user.is_authenticated %}
+        <li class="nav-item me-3">
+          <div class="d-flex flex-column text-end">
+            <span class="fw-semibold">{{ request.user.username }}</span>
+            <small class="text-muted">Ingeniero</small>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-success" href="{% url 'logout' %}">Cerrar sesión</a>
+        </li>
+        {% else %}
+        <li class="nav-item me-2">
+          <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-success" href="{% url 'register' %}">Registrarse</a>
+        </li>
+        {% endif %}
+      </ul>
     </div>
+  </div>
 </nav>
