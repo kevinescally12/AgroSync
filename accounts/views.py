@@ -33,11 +33,11 @@ class LoginView(View):
                 request.session.set_expiry(0)
 
             if user.rol == 'agricultor':
-                return redirect('dashboard_agricultor')
+                return redirect('home')
             elif user.rol == 'ingeniero':
-                return redirect('dashboard_ingeniero')
+                return redirect('home')
             elif user.rol == 'cooperativa':
-                return redirect('dashboard_cooperativa')
+                return redirect('home')
             else:
                 return redirect('home')
         return render(request, 'accounts/login.html', {'form': form})
@@ -52,17 +52,17 @@ def home_view(request):
     return render(request, 'home.html')
 
 
-@login_required
+'''@login_required
 def dashboard_agricultor(request):
-    return HttpResponse("Hola agricultor")
-    #return render(request, 'dashboards/agricultor.html')
+    #return HttpResponse("Hola agricultor")
+    return render(request, 'home.html')
 
-@login_required
+#@login_required
 def dashboard_ingeniero(request):
-    return HttpResponse("Hola ingeniero")
-    #return render(request, 'dashboards/ingeniero.html')
+    #return HttpResponse("Hola ingeniero")
+    return render(request, 'home.html')
 
 @login_required
 def dashboard_cooperativa(request):
-    return HttpResponse("Hola cooperativa")
-    #return render(request, 'dashboards/cooperativa.html')
+    return HttpResponse("home.html")
+    #return render(request, 'dashboards/cooperativa.html')'''

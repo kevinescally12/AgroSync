@@ -1,0 +1,36 @@
+{% block content %}
+<h2>Crear Nueva Finca</h2>
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        {{ form.terreno.label_tag }}
+        {{ form.terreno }}
+        {% if form.terreno.errors %}
+            <div class="text-danger">{{ form.terreno.errors }}</div>
+        {% endif %}
+    </div>
+    <div class="mb-3">
+        {{ form.name.label_tag }}
+        {{ form.name }}
+        {% if form.name.errors %}
+            <div class="text-danger">{{ form.name.errors }}</div>
+        {% endif %}
+    </div>
+    <div class="mb-3">
+        {{ form.area.label_tag }}
+        {{ form.area }}
+        {% if form.area.errors %}
+            <div class="text-danger">{{ form.area.errors }}</div>
+        {% endif %}
+    </div>
+    <div class="mb-3">
+        {{ form.type_crop.label_tag }}
+        {{ form.type_crop }}
+        {% if form.type_crop.errors %}
+            <div class="text-danger">{{ form.type_crop.errors }}</div>
+        {% endif %}
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a href="{% url 'finca_list' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

@@ -1,17 +1,66 @@
-<nav class="nav" >
-    <div >
-        <a href="{% url 'home' %}">Agrosync</a>
-        <div >
-            <ul class="nav nav-pills">
-                {% if request.user.is_authenticated %}
-                <li class="nav-item" ><a class="nav-link active"  href="{% url 'logout' %}">Cerrar sesión</a></li>
-                <li ><a href="{% url 'contact' %}">Agricultor</a> </li>
-                {% else %}
-                <li ><a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"  href="{% url 'login' %}">Iniciar sesión</a></li>
-                <li ><a  href="{% url 'register' %}">Registrarse</a></li>
-                
+{% load static %}
+{% block static %}
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+{% endblock %}
+<nav class="navbar">
+    <div class="navbar-container">
+        <!-- Título a la izquierda -->
+        <div id="logo"><a href="{% url 'home' %}" class="logo">Agrosync</a></div>
+        <div class="contenido">
+            {% if request.user.is_authenticated %}
+                {% if request.user.rol == 'agricultor' %}
+                    <ul class="servicios agricultor">
+                        <li><a href="">Gestion de cultivos</a></li>
+                        <li><a href="">Gestion de gastos</a></li>
+                        <li><a href="">Gestion de insumos</a></li>
+                        <li><a href="">Inventario</a></li>
+                        <li><a href="">Solicitudes</a></li>
+                    </ul>
+                {% elif request.user.rol == 'ingeniero' %}
+                    <ul class="servicios ingeniero">
+                        <li><a href="{% url 'ver_agricultores' %}">Agricultores</a></li>
+                        <li><a href="">Reportes</a></li>
+                        <li><a href=""></a></li>
+                        <li><a href="">Inventario</a></li>
+                        <li><a href="">Solicitudes</a></li>
+                    </ul>
+                {% elif request.user.rol == 'admin' %}
+                    <ul class="servicios-admin">
+                        <li><a href="">Gestion de cultivos</a></li>
+                        <li><a href="">Gestion de gastos</a></li>
+                        <li><a href="">Gestion de insumos</a></li>
+                        <li><a href="">Inventario</a></li>
+                        <li><a href="">Solicitudes</a></li>
+                    </ul>
+
+                {% elif request.user.rol == 'cooperativa' %}
+                    <a href="#">Panel Cooperativa</a>
                 {% endif %}
-            </ul>
+            {% endif %}
+        </div>
+        <!-- Acciones a la derecha -->
+        <div class="nav-actions">
+            {% if request.user.is_authenticated %}
+            <div class="perfil">
+                <a href="#">
+                    {{ request.user.username }}
+                    <p>{{user.rol}}</p>
+                </a>
+                <img src="{{ request.user.profile.image.url }}" alt="Imagen de perfil" class="img-perfil">
+            </div>
+            <!-- Ícono de cerrar sesión -->
+            <a href="{% url 'logout' %}" class="icon-btn" title="Cerrar sesión">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6a2 2 0 012 2v1" />
+                </svg>
+            </a>
+
+            {% else %}
+            <a href="{% url 'login' %}" class="btn">Iniciar sesión</a>
+            <a href="{% url 'register' %}" class="btn">Registrarse</a>
+            {% endif %}
         </div>
     </div>
 </nav>
