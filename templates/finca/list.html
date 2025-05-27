@@ -1,0 +1,7 @@
+<h1>Lista de Fincas</h1>
+<ul>
+    {% for finca in fincas %}
+        <li>{{ finca.name }} ({{ finca.terreno.name }}) - {{ finca.type_crop }} - {{ finca.area }} ha</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'finca_create' %}">Crear nueva finca</a>

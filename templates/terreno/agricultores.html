@@ -1,0 +1,15 @@
+{%extends 'layout/base.html' %}
+{%block content%}
+<h2>Terrenos por agricultor</h2>
+{# Iteramos sobre la lista de 'data' que se pasa desde la vista (probablemente es una lista de diccionarios con 'agricultor' y 'terrenos') #}
+{% for agricultor in agricultores %}
+    <h3>{{ agricultor.get_full_name }} ({{ agricultor.username }})</h3>
+
+    {# Botón que lleva a la vista que muestra los terrenos de este agricultor #}
+    <form action="{% url 'terrenos_por_agricultor' agricultor.id %}" method="get">
+        <button type="submit">Ver terrenos</button>
+    </form>
+    <hr>
+{% endfor %}
+
+{% endblock %}

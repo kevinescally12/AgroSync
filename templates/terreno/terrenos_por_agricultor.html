@@ -1,0 +1,15 @@
+{% extends "layout/base.html" %}
+{% block content %}
+<h2>Terrenos de {{ agricultor.get_full_name }} ({{ agricultor.username }})</h2>
+
+<ul>
+    {% for terreno in terrenos %}
+        <li>
+            <strong>{{ terreno.nombre }}</strong> - {{ terreno.ubicacion }} ({{ terreno.area }} km²)
+        </li>
+    {% empty %}
+        <li>Este agricultor no tiene terrenos registrados.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'ver_agricultores' %}">← Volver a la lista de agricultores</a>{% endblock content %}

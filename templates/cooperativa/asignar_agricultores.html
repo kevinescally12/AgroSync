@@ -1,0 +1,10 @@
+{% extends "layout/base.html" %}
+{% block content %}
+<h2>Asignar Agricultores a un Ingeniero</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Asignar</button>
+</form>
+{% endblock  %}
+

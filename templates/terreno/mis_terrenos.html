@@ -1,0 +1,11 @@
+<h2>Mis terrenos</h2>
+
+{% if terrenos %}
+    <ul>
+    {% for terreno in terrenos %}
+        <li>{{ terreno.nombre }} - {{ terreno.ubicacion }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No tienes terrenos registrados.</p>
+{% endif %}

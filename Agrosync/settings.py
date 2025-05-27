@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'cosecha',
-    'contact',
+    'insumos',
+    'terreno',
+    'Cooperativa'
 ]
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'

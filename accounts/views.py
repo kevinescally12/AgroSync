@@ -5,7 +5,6 @@ from .forms import RegisterForm, LoginForm
 from django.contrib import messages
 from django.views import View
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
 
 def register_view(request):
     if request.method == 'POST':
@@ -31,16 +30,9 @@ class LoginView(View):
             auth_login(request, user)
 
             if not form.cleaned_data['remember_me']:
-                request.session.set_expiry(0)
-
-            if user.rol == 'agricultor':
-                return redirect('dashboard_agricultor')
-            elif user.rol == 'ingeniero':
-                return redirect('dashboard_ingeniero')
-            elif user.rol == 'cooperativa':
-                return redirect('dashboard_cooperativa')
-            else:
-                return redirect('home')
+                request.session.set_expiry(0)  # Sesión expira al cerrar navegador
+            
+            return redirect('home')
         return render(request, 'accounts/login.html', {'form': form})
 
 
@@ -51,19 +43,3 @@ def logout_view(request):
 
 def home_view(request):
     return render(request, 'home.html')
-
-
-@login_required
-def dashboard_agricultor(request):
-    return HttpResponse("Dashboard Agricultor")
-    #return render(request, 'dashboards/agricultor.html')
-
-@login_required
-def dashboard_ingeniero(request):
-    #return HttpResponse("Dashboard Ingeniero")
-    return render(request, 'dashboard/ingeniero.html')
-
-@login_required
-def dashboard_cooperativa(request):
-    return HttpResponse("Dashboard Cooperativa")
-    #return render(request, 'dashboards/cooperativa.html')

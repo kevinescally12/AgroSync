@@ -2,21 +2,27 @@
 {% extends 'layout/base.html' %}
 {% block title %}Inicio{% endblock %}
 {% block content %}
-<div class="text-center">
+<div >
     <h1>Bienvenido, {{ request.user.username }}</h1>
-    <p class="lead">Has iniciado sesión correctamente.</p>
+    <p >Has iniciado sesión correctamente.</p>
 </div>
-<div class="somos">
+<div >
     <h1>¿Quienes somos?</h1>
     <p>
         AgroSyns, es un proyecto universitarios que busca facilitar la vida a los agricultores a poder maximizar su produccion, 
         contando con multiples servicios para poder gestionar mejor sus cultivos, sus campos, sus ingreso y sus empleados
     </p>
 </div>
-<div class="servicios">
-    <div class="registro_cosecha">
-        
-    </div>
+<div >
+    <card>
+        Precio de Cacao
+    </card>
+    <card>
+        Produccion total
+    </card>
+    <card>
+        Produccion de la ultima cosecha
+    </card>
 </div>
 
 {% endblock %}
