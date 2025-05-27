@@ -1,3 +1,5 @@
+{% extends "layout/base.html" %}
+{% block content %}
 <h2>Terrenos de {{ agricultor.get_full_name }} ({{ agricultor.username }})</h2>
 
 <ul>
@@ -10,4 +12,4 @@
     {% endfor %}
 </ul>
 
-<a href="{% url 'ver_agricultores' %}">← Volver a la lista de agricultores</a>
+<a href="{% url 'ver_agricultores' %}">← Volver a la lista de agricultores</a>{% endblock content %}

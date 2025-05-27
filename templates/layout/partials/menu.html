@@ -20,7 +20,6 @@
                     <ul class="servicios ingeniero">
                         <li><a href="{% url 'ver_agricultores' %}">Agricultores</a></li>
                         <li><a href="">Reportes</a></li>
-                        <li><a href=""></a></li>
                         <li><a href="">Inventario</a></li>
                         <li><a href="">Solicitudes</a></li>
                     </ul>
@@ -33,8 +32,8 @@
                         <li><a href="">Solicitudes</a></li>
                     </ul>
 
-                {% elif request.user.rol == 'cooperativa' %}
-                    <a href="#">Panel Cooperativa</a>
+                {% elif request.user.rol == 'coopertativa' %}
+                    <a href="{% url 'asignar_agricultores'%}">Asignacion</a>
                 {% endif %}
             {% endif %}
         </div>
