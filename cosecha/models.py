@@ -15,6 +15,16 @@ class Producto(models.Model):
     peso = models.FloatField(),
     humedad = models.CharField(),
     contenido_grasa = models.CharField()
-    fecha_cosecha = models.CharField()
-    estado_calidad = models.CharField()
+    fecha_cosecha = models.DateField()
+    ESTADOS_CALIDAD = [
+        ('bueno', 'Bueno'),
+        ('regular', 'Regular'),
+        ('malo', 'Malo'),
+    ]
 
+    nombre = models.CharField(max_length=100)
+    estado_calidad = models.CharField(
+        max_length=10,
+        choices=ESTADOS_CALIDAD,
+        default='bueno'
+    )

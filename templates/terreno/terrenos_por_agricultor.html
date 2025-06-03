@@ -7,9 +7,12 @@
         <li>
             <strong>{{ terreno.nombre }}</strong> - {{ terreno.ubicacion }} ({{ terreno.area }} km²)
         </li>
+        <a href="{% url 'detalle_terreno' terreno.id %}">Ver detalles</a>
+        
     {% empty %}
         <li>Este agricultor no tiene terrenos registrados.</li>
     {% endfor %}
 </ul>
+<a href="{% url 'crear_terreno' agricultor.id %}">Agregar nuevo terreno</a>
 
 <a href="{% url 'ver_agricultores' %}">← Volver a la lista de agricultores</a>{% endblock content %}
