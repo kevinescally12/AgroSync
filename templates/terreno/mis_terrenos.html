@@ -4,6 +4,7 @@
     <ul>
     {% for terreno in terrenos %}
         <li>{{ terreno.nombre }} - {{ terreno.ubicacion }}</li>
+        <a href="{% url 'detalle_terreno' terreno.id %}">Ver detalles</a>
     {% endfor %}
     </ul>
 {% else %}

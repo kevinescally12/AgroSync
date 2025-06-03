@@ -1,29 +1,42 @@
 <!-- accounts/templates/accounts/home.html -->
 {% extends 'layout/base.html' %}
+
 {% block title %}Inicio{% endblock %}
+
 {% block content %}
-<div >
+
+{% if not user.is_authenticated %}
+<div>
     <h1>Bienvenido, {{ request.user.username }}</h1>
-    <p >Has iniciado sesión correctamente.</p>
+    <p>Has iniciado sesión correctamente.</p>
 </div>
-<div >
-    <h1>¿Quienes somos?</h1>
+<div>
+    <h1>¿Quiénes somos?</h1>
     <p>
-        AgroSyns, es un proyecto universitarios que busca facilitar la vida a los agricultores a poder maximizar su produccion, 
-        contando con multiples servicios para poder gestionar mejor sus cultivos, sus campos, sus ingreso y sus empleados
+        AgroSyns es un proyecto universitario que busca facilitar la vida a los agricultores 
+        para maximizar su producción, con múltiples servicios para gestionar mejor sus cultivos, 
+        campos, ingresos y empleados.
     </p>
 </div>
-<div >
-    <card>
-        Precio de Cacao
-    </card>
-    <card>
-        Produccion total
-    </card>
-    <card>
-        Produccion de la ultima cosecha
-    </card>
-</div>
+{% endif %}
+
+{% if user.is_authenticated %}
+    {% if request.user.rol == 'agricultor' %}
+        <div>
+            <div>
+                <strong>Precio de Cacao</strong>
+
+            </div>
+            <div>
+                <strong>Producción total</strong>
+                
+            </div>
+            <div>
+                <strong>Producción de la última cosecha</strong>
+            </div>
+        </div>
+    {% endif %}
+{% endif %}
 
 {% endblock %}
 

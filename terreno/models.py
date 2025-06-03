@@ -8,3 +8,6 @@ class Terreno(models.Model):
     ubicacion = models.CharField(max_length=100)
     area = models.DecimalField(max_digits=10, decimal_places=2)
     agricultor = models.ForeignKey(CustomUser, on_delete=models.CASCADE, limit_choices_to={'rol' : 'agricultor'})
+
+    def __str__(self):
+        return self.nombre

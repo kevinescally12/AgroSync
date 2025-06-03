@@ -12,9 +12,7 @@
                     <ul class="servicios agricultor">
                         <li><a href="">Gestion de cultivos</a></li>
                         <li><a href="">Gestion de gastos</a></li>
-                        <li><a href="">Gestion de insumos</a></li>
-                        <li><a href="">Inventario</a></li>
-                        <li><a href="">Solicitudes</a></li>
+                        <li><a href="{% url 'listar_insumos' %}">Gestion de insumos</a></li>
                     </ul>
                 {% elif request.user.rol == 'ingeniero' %}
                     <ul class="servicios ingeniero">

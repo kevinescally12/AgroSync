@@ -1,0 +1,39 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+  <h2 class="text-xl font-bold mb-4">Mis Insumos</h2>
+
+  <a href="{% url 'crear_insumo' %}" class="btn btn-primary mb-3">Crear nuevo insumo</a>
+
+  {% if insumos %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Terreno</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Fecha creación</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for insumo in insumos %}
+          <tr>
+            <td>{{ insumo.nombre }}</td>
+            <td>{{ insumo.terreno.nombre|default:"General" }}</td>
+            <td>{{ insumo.cantidad }}</td>
+            <td>${{ insumo.precio }}</td>
+            <td>{{ insumo.fecha_creacion|date:"Y-m-d" }}</td>
+            <td>
+              <a href="{% url 'editar_insumo' insumo.id %}" class="btn btn-sm btn-warning">Editar</a>
+              <a href="{% url 'eliminar_insumo' insumo.id %}" class="btn btn-sm btn-danger">Eliminar</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No tienes insumos registrados.</p>
+  {% endif %}
+{% endblock %}

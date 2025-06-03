@@ -8,7 +8,7 @@ from accounts.models import CustomUser
 from Cooperativa.models import IngenieroAgricultores  # Importamos la asignación
 
 @login_required
-def crear_terreno(request):
+def crear_terreno(request,id):
     if request.user.rol != 'ingeniero':
         return HttpResponseForbidden("No tienes permiso para acceder a esta página.")
 
@@ -96,3 +96,23 @@ def terreno_por_agricultor(request, id):
         'agricultor': agricultor,
         'terrenos': terrenos
     })
+@login_required
+def detalle_terreno(request, id):
+    terreno = get_object_or_404(Terreno, id=id)
+    
+    if request.user.rol == 'ingeniero':
+        relaciones = IngenieroAgricultores.objects.filter(ingeniero=request.user)
+        agricultores_asignados = CustomUser.objects.filter(
+            id__in=[a.id for rel in relaciones for a in rel.agricultores.all()]
+        )
+        if terreno.agricultor not in agricultores_asignados:
+            return HttpResponseForbidden("No tienes permiso para ver este terreno.")
+
+    elif request.user.rol == 'agricultor':
+        if terreno.agricultor != request.user:
+            return HttpResponseForbidden("No tienes permiso para ver este terreno.")
+
+    else:
+        return HttpResponseForbidden("No tienes permiso para ver este terreno.")
+
+    return render(request, 'terreno/detalle_terreno.html', {'terreno': terreno})

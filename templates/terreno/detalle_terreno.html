@@ -1,0 +1,12 @@
+<div>
+    <ul>
+        <li><strong>{{ terreno.nombre }}</strong></li>
+        <li>{{ terreno.ubicacion }}</li>
+        <li>{{ terreno.area }} km²</li>
+    </ul>
+{% if user.is_authenticated %}
+    {% if request.user.rol == 'ingeniero' %}
+        <a href="{% url 'crear_terreno' terreno.agricultor.id %}">Agregar nuevo terreno</a>
+    {% endif %}
+{% endif %}
+</div>
